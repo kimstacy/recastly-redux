@@ -23,7 +23,7 @@ export var mockReducer = sinon.spy(function(state = {lastAction: ''}, action) {
   case 'CHANGE_VIDEO_LIST':
     return {lastAction: action.type};
   default:
-    return {lastAction: 'Unrecongized.'};
+    return {lastAction: 'Unrecognized.'};
   }
 });
 

@@ -6,7 +6,7 @@
 - Responsible for maintaining the state of your application
 - Regular JS object w/ useful methods:
   1. getState - if you invoke it, you will get the state
-  2. dispatch - tells  state to update
+  2. dispatch - tells state to update
   3. subscribe - register functions to be invoked when state updates
 
 🚩 ACTION - Objects / (Redux Thunk - functions)
