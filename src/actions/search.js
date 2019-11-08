@@ -2,23 +2,24 @@ import searchYouTube from '../lib/searchYouTube.js';
 import changeVideoList from './videoList.js';
 import changeVideo from './currentVideo.js';
 import YOUTUBE_API_KEY from '../config/youtube.js';
-import thunk from 'redux-thunk';
+
+import _ from 'lodash';
+
+//TODO:  Write an asynchronous action to handle a video search!
 
 var handleVideoSearch = (q) => {
-  //TODO:  Write an asynchronous action to handle a video search!
-  return (dispatch) => {
-    var params = {
+
+  return _.debounce((dispatch) => {
+    var options = {
       key: YOUTUBE_API_KEY,
       query: q
     };
 
-    searchYouTube(params, (videos) => {
-      // dispatch actions to the store
+    searchYouTube(options, (videos) => {
       dispatch(changeVideoList(videos));
       dispatch(changeVideo(videos[0]));
     });
-
-  };
+  }, 400);
 };
 
 export default handleVideoSearch;

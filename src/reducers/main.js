@@ -10,9 +10,8 @@ import videoList from './videoList.js';
 //  listed above.
 
 var rootReducer = combineReducers({
-  videoList,
-  currentVideo
+  currentVideo,
+  videoList
 });
-
 
 export default rootReducer;
